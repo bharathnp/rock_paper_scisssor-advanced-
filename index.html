@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <script async src="./js/main.js"></script>
+  <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="container-fluid">
+      <div class="header">
+        <div class="row p-0 m-0">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12 p-0 m-0">
+            <div class="score">
+              <div class="score__logo">
+                <img id="logo" data-original="./assets/img/logo.svg" data-expert="./assets/img/logo-bonus.svg" src="" alt="Logo Game">
+              </div>
+              <div class="score__container">
+                <div class="score__container-title">
+                  <span>Score</span>
+                </div>
+                <div class="score__container-number">
+                  <label id="score"></label>
+                </div>
+              </div>
+            </div>
+            <div class="modegame__container">
+              <p>Click to change the game mode.</p>
+              <button id="game-mode" onclick="changeMode(this.innerText)"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="row">
+          <div class="col-12">
+            <div id="choose" class="step">
+              <div id="choose-container" class="choose">
+                <div class="choose__buttons">
+                  <button class="paper" onclick="changeStepGame('game','paper')"><img src="./assets/img/icon-paper.svg" alt=""></button>
+                  <button class="scissors" onclick="changeStepGame('game','scissors')"><img src="./assets/img/icon-scissors.svg" alt=""></button>
+                  <button class="rock" onclick="changeStepGame('game','rock')"><img src="./assets/img/icon-rock.svg" alt=""></button>
+                  <button class="spock" onclick="changeStepGame('game','spock')"><img src="./assets/img/icon-spock.svg" alt=""></button>
+                  <button class="lizard" onclick="changeStepGame('game','lizard')"><img src="./assets/img/icon-lizard.svg" alt=""></button>
+                </div>
+                <div class="choose__figure">
+                  <img data-original="./assets/img/bg-triangle.svg" data-expert="./assets/img/bg-pentagon.svg" src="" alt="">
+                </div>  
+              </div>
+            </div>
+            <div id="game" class="step">
+              <div class="game" >
+                <div class="game__container">
+                  <div class="game__container-you">
+                    <h5>You picked</h5>
+                    <div class="game__buttons"><button id="you-button"><img id="you" src="" alt=""></button></div>
+                  </div>
+                  <div id="result-container" class="game__container-result">
+                    <h3 id="result"></h3>
+                    <button onclick="update()" ><span>Play again</span></button>
+                  </div>
+                    <div class="game__container-thehouse">
+                      <h5>The house picked</h5>
+                      <div class="game__buttons"><button id="thehouse-button"><img id="thehouse" src="" alt=""></button></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rules">
+    <button onclick="openModalRules();"><span>Rules</span></button>
+    <div id="rules-modal" class="w3-modal">
+      <div class="w3-modal-content w3-animate-top w3-card-4">
+        <span onclick="closeModalRules();" class="w3-button w3-display-topright">&times;</span>
+        <h2>Rules</h2>
+        <div class="w3-container">
+          <img data-original="./assets/img/image-rules.svg" data-expert="./assets/img/image-rules-bonus.svg" src="" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="attribution" class="">
+    <!-- <h6>Coded with <i class="fa fa-heart"></i> by <a href="https://lauramunozcaicedo.herokuapp.com/" target="_blank">Laura Muñoz Caicedo</a>.</h6>
+     -->
+  </div>
+</body>
+</html>
